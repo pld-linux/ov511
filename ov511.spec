@@ -3,11 +3,11 @@
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_without	kernel		# don't build kernel modules
 %bcond_without	smp		# don't build SMP module
-%bcond_with	userspace	# don't build userspace package
 %bcond_with	verbose		# verbose build (V=1)
 #
 %define		_rel	1
 Summary:	Linux OVCam Drivers
+Summary(pl):	Linuksowe sterowniki do kamer OVCam
 Name:		ov511
 Version:	2.32
 Release:	%{_rel}
@@ -28,6 +28,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Linux OVCam Drivers.
+
+%description -l pl
+Linuksowe sterowniki do kamer OVCam.
 
 %package -n kernel%{_alt_kernel}-video-%{name}
 Summary:	Linux driver for OVCam webcams
@@ -56,10 +59,10 @@ Requires(post,postun):	/sbin/depmod
 %endif
 
 %description -n kernel%{_alt_kernel}-smp-video-%{name}
-This is driver for OVCam webcams for Linux.
+This is driver for OVCam webcams for Linux SMP.
 
 %description -n kernel%{_alt_kernel}-smp-video-%{name} -l pl
-Sterownik dla Linuksa do kamer internetowych OVCam.
+Sterownik dla Linuksa SMP do kamer internetowych OVCam.
 
 %prep
 %setup -q
@@ -108,9 +111,4 @@ rm -rf $RPM_BUILD_ROOT
 /lib/modules/%{_kernel_ver}smp/%{_module_dir}/*.ko*
 %{_sysconfdir}/modprobe.d/%{_kernel_ver}smp/%{name}.conf
 %endif
-%endif
-
-%if %{with userspace}
-%files
-%defattr(644,root,root,755)
 %endif
