@@ -7,7 +7,7 @@
 #
 %define		_rel	1
 Summary:	Linux OVCam Drivers
-Summary(pl.UTF-8):   Linuksowe sterowniki do kamer OVCam
+Summary(pl.UTF-8):	Linuksowe sterowniki do kamer OVCam
 Name:		ov511
 Version:	2.32
 Release:	%{_rel}
@@ -34,7 +34,7 @@ Linuksowe sterowniki do kamer OVCam.
 
 %package -n kernel%{_alt_kernel}-video-%{name}
 Summary:	Linux driver for OVCam webcams
-Summary(pl.UTF-8):   Sterownik dla Linuksa do kamer internetowych OVCam
+Summary(pl.UTF-8):	Sterownik dla Linuksa do kamer internetowych OVCam
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -50,7 +50,7 @@ Sterownik dla Linuksa do kamer internetowych OVCam.
 
 %package -n kernel%{_alt_kernel}-smp-video-%{name}
 Summary:	Linux SMP driver for OVCam webcams
-Summary(pl.UTF-8):   Sterownik dla Linuksa SMP do kamer internetowych OVCam
+Summary(pl.UTF-8):	Sterownik dla Linuksa SMP do kamer internetowych OVCam
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
